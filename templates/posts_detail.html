@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+
+        <div class="p-1 p-md-2 mb-1 rounded text-bg-dark">
+            <div class="col-md-6 px-0">
+                <div class="alert alert-info">
+                    <p>{{ article.info }}</p>
+                    <p><b>Дата поста: {{ article.date.date() }}</b></p>
+                    <a href="/posts/{{ article.id }}/delete" class="p-1 p-md-2 mb-1 rounded text-bg-dark">Удалить пост</a>
+                    <a href="/posts/{{ article.id }}/update" class="p-1 p-md-2 mb-1 rounded text-bg-dark">Изменить пост</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
